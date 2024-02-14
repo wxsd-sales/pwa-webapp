@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>PWA Web App</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+
+    <style>
+      html,
+      body {
+        touch-action: none;
+      }
+      #sidebar {
+        background-position: center;
+        background-repeat: no-repeat;
+        -webkit-text-stroke-width: 1px;
+        -webkit-text-stroke-color: black;
+        background-size: 100% 100%;
+        background-image: url("");
+      }
+
+      .status {
+        background-color: coral;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="columns is-gapless">
+      <div
+        class="column is-one-fifth is-flex is-flex-direction-column is-justify-content-end"
+        style="height: 100vh"
+        id="sidebar"
+      >
+        <div class="pl-3 pb-3">
+          <p
+            class="title has-text-white"
+            id="outsideTemp"
+            style="font-size: 2.5rem"
+          >
+            84.2°F
+          </p>
+          <p
+            class="title has-text-white"
+            id="outsideCondititions"
+            style="font-size: 2.5rem"
+          >
+            Weather
+          </p>
+
+          <p
+            class="title has-text-white"
+            id="cityName"
+            style="font-size: 2.5rem"
+          >
+            City Name
+          </p>
+        </div>
+      </div>
+      <div class="column">
+        <div class="columns is-gapless is-multiline">
+          <div
+            class="status column is-12 is-flex is-align-items-center is-justify-content-end"
+            style="height: 15vh"
+            id="topPanel"
+          >
+            <p
+              class="title pr-6 has-text-white"
+              id="workspaceName"
+              style="font-size: 3.5rem"
+            >
+              My Meeting Room
+            </p>
+          </div>
+          <div
+            class="column is-12 has-background-warning-light"
+            style="height: 70vh"
+            id="main"
+          >
+            <div
+              class="columns pt-4 is-gapless is-flex is-align-content-center"
+            >
+              <div
+                class="column is-flex is-flex-direction-row is-justify-content-center"
+              >
+                <img
+                  width="40px"
+                  src="/icons/contact-group_20.svg"
+                />
+                <p class="title pl-2" id="peopleCount">1/10</p>
+              </div>
+              <div
+                class="column is-flex is-flex-direction-row is-justify-content-center"
+              >
+                <img
+                  width="40px"
+                  src="/icons/temperature_14.svg"
+                />
+                <p class="title pl-2" id="roomTemp">80°F</p>
+              </div>
+              <div
+                class="column is-flex is-flex-direction-row is-justify-content-center"
+              >
+                <img
+                  width="40px"
+                  src="/icons/noise-removal_12.svg"
+                />
+                
+                <p class="title pl-2" id="roomSound">30 dBA</p>
+              </div>
+            </div>
+            <div class="columns is-gapless" style="height: 100%">
+              <div
+                class="column is-12 is-flex is-justify-content-center is-align-items-center"
+              >
+                <img
+                  src=""
+                  height="40vh"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="status column is-12 is-flex is-align-items-center is-justify-content-end"
+            style="height: 15vh"
+            id="bottomPanel"
+          >
+            <p
+              class="title pr-6 has-text-white"
+              id="roomStatus"
+              style="font-size: 4rem"
+            >
+              Occupied
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
