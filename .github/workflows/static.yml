@@ -33,7 +33,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Modify script.js
         run: |
-          sed -i -e 's/<Open Weather API Key>/${{secrets.OPEN_WEATHER_API_KEY}}/g' /script.js
+          sed -i -e 's/<Open Weather API Key>/${{secrets.OPEN_WEATHER_API_KEY}}/g' script.js
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
