@@ -96,41 +96,6 @@ async function updateRoomStatus() {
   displayAvailable();
 }
 
-// "/Command/UserInterface/LedControl/Color/Set",
-// "/Configuration/SystemUnit/Name",
-// "/Configuration/UserInterface/LedControl/Mode",
-// "/Status/UserInterface/LedControl/Color",
-// "/Status/SystemUnit/Hardware/Module/SerialNumber",
-// "/Command/Bookings/Book",
-// "/Command/Bookings/Clear",
-// "/Command/Bookings/Delete",
-// "/Command/Bookings/Edit",
-// "/Command/Bookings/Extend",
-// "/Command/Bookings/Get",
-// "/Command/Bookings/List",
-// "/Command/Bookings/NotificationSnooze",
-// "/Command/Bookings/Put",
-// "/Command/Bookings/Respond",
-// "/Status/Bookings/Availability/Status",
-// "/Status/Bookings/Availability/TimeStamp",
-// "/Status/Bookings/Current/Id",
-// "/Status/Peripherals/ConnectedDevice/RoomAnalytics/AirQuality/Index",
-// "/Status/Peripherals/ConnectedDevice/RoomAnalytics/AmbientTemperature",
-// "/Status/Peripherals/ConnectedDevice/RoomAnalytics/RelativeHumidity",
-// "/Status/RoomAnalytics/AmbientTemperature",
-// "/Status/RoomAnalytics/RelativeHumidity",
-// "/Status/RoomAnalytics/PeopleCount/Capacity",
-// "/Status/RoomAnalytics/PeopleCount/Current",
-// "/Status/RoomAnalytics/PeoplePresence",
-// "/Status/RoomAnalytics/AmbientNoise/Level/A",
-// "/Status/RoomAnalytics/Sound/Level/A",
-// "/Status/RoomAnalytics/ReverberationTime/Middle/RT60",
-// "/Status/RoomAnalytics/ReverberationTime/LastRun",
-// "/Status/RoomAnalytics/ReverberationTime/Octaves/CenterFrequency",
-// "/Status/RoomAnalytics/ReverberationTime/Octaves/RT60",
-// "/Status/RoomAnalytics/Engagement/CloseProximity",
-// "/Status/SystemUnit/ProductId",
-
 function subscribe() {
   console.log("Subscribing to status changes");
 
