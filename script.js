@@ -9,6 +9,11 @@ const outsideTemp = document.getElementById("outsideTemp");
 const outsideCondititions = document.getElementById("outsideCondititions");
 const cityName = document.getElementById("cityName");
 
+
+
+const apiKey = urlParams.get("apiKey") || "<Open Weather API Key>";
+const cityId = urlParams.get("cityId") || "2759794"
+
 let xapi;
 let meetingRoomName = "Testing";
 let userName = "";
@@ -278,8 +283,6 @@ function inRoomNavigator(xapi) {
 }
 
 function getWeather() {
-  const cityId = "4180439";
-  const apiKey = "<Open Weather API Key>";
   const requestOptions = {
     method: "GET",
     redirect: "follow",
