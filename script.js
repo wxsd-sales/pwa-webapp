@@ -26,9 +26,6 @@ let peopleCountCurrent = 0;
 let hotdesking = false;
 let metricOnly = false;
 
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-
 if (urlParams.get("metricOnly")) {
   console.log('Displaying Metric Only')
   metricOnly = true;
