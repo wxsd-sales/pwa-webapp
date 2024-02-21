@@ -9,7 +9,8 @@ const outsideTemp = document.getElementById("outsideTemp");
 const outsideCondititions = document.getElementById("outsideCondititions");
 const cityName = document.getElementById("cityName");
 
-
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
 
 const apiKey = urlParams.get("apiKey") || "<Open Weather API Key>";
 const cityId = urlParams.get("cityId") || "2759794"
