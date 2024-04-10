@@ -315,3 +315,13 @@ async function updateWeather() {
     (letter) => letter.toUpperCase()
   );
 }
+
+document.body.addEventListener('click', ()=>{
+
+  const workspace = workspaceName.innerHTML;
+  const status = roomStatus.innerHTML;
+
+  const message = `Meeting Room Name ${workspace},, status ${status}`
+
+  speak(message,{ pitch: 80 , speed: 140})
+}); 
