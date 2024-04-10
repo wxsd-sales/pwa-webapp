@@ -63,6 +63,7 @@ async function getInitial() {
     console.log("RoomCount Capacity:", roomCapacity);
     if (roomCapacity == "-1") roomCapacity = 1;
     capacity = roomCapacity;
+    updateRoomStatus();
   });
 
   xapi.Status.RoomAnalytics.PeopleCount.Current.get().then((currentCount) => {
@@ -70,11 +71,13 @@ async function getInitial() {
     if (currentCount == "-1") currentCount = 0;
     peopleCount.innerHTML = `${currentCount}/${capacity}`;
     peopleCountCurrent = currentCount;
+    updateRoomStatus();
   });
 
   xapi.Status.Bookings.Availability.Status.get().then((bookedStatus) => {
     console.log("Booked Status:", bookedStatus);
     booked = bookedStatus != "Free";
+    updateRoomStatus();
   });
   updateRoomStatus();
 }
