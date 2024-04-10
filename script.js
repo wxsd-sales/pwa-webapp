@@ -13,7 +13,7 @@ const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 
 const apiKey = urlParams.get("apiKey") || "<Open Weather API Key>";
-const cityId = urlParams.get("cityId") || "2759794"
+const cityId = urlParams.get("cityId") || "2759794";
 
 let xapi;
 let meetingRoomName = "Testing";
@@ -27,7 +27,7 @@ let hotdesking = false;
 let metricOnly = false;
 
 if (urlParams.get("metricOnly")) {
-  console.log('Displaying Metric Only')
+  console.log("Displaying Metric Only");
   metricOnly = true;
 }
 
@@ -70,7 +70,7 @@ async function getInitial() {
     console.log("RoomCount Current:", currentCount);
     if (currentCount == "-1") currentCount = 0;
     peopleCount.innerHTML = `${currentCount}/${capacity}`;
-    peopleCountCurrent = currentCount;
+    peopleCountCurrent = parseInt(currentCount);
     updateRoomStatus();
   });
 
@@ -126,7 +126,7 @@ function subscribe() {
     console.log("RoomCount Current changed to:", currentCount);
     if (currentCount == "-1") currentCount = 0;
     peopleCount.innerHTML = `${currentCount}/${capacity}`;
-    peopleCountCurrent = currentCount;
+    peopleCountCurrent = parseInt(currentCount);
     updateRoomStatus();
   });
 }
@@ -217,7 +217,7 @@ function pollStatus() {
   // xapi.Status.RoomAnalytics.AmbientTemperature.get()
   //   .then((ambientTemp) => updateTemperature(ambientTemp))
   //   .catch((error) => console.log("Unable to Ambient Temperature"));
-  
+
   getTemperature();
 
   xapi.Status.RoomAnalytics.AmbientNoise.Level.A.get()
@@ -241,20 +241,19 @@ async function getTemperature() {
     console.log(
       `Getting Temperature and Humidity values from In-Room Navigator [${navID}]`
     );
-    const ambientTemp =  
-      await xapi.Status.Peripherals.ConnectedDevice[
-        navID
-      ].RoomAnalytics.AmbientTemperature.get();
-    
-    updateTemperature(ambientTemp)
-   
+    const ambientTemp = await xapi.Status.Peripherals.ConnectedDevice[
+      navID
+    ].RoomAnalytics.AmbientTemperature.get();
+
+    updateTemperature(ambientTemp);
   } else {
     console.log(
       `No In-Room Navigators found, attempting to get data from main device`
     );
     try {
-      const ambientTemp =  await xapi.Status.RoomAnalytics.AmbientTemperature.get();
-      updateTemperature(ambientTemp)
+      const ambientTemp =
+        await xapi.Status.RoomAnalytics.AmbientTemperature.get();
+      updateTemperature(ambientTemp);
     } catch {
       console.log(`Temperature sensor not available on main device`);
     }
@@ -319,12 +318,11 @@ async function updateWeather() {
   );
 }
 
-document.body.addEventListener('click', ()=>{
-
+document.body.addEventListener("click", () => {
   const workspace = workspaceName.innerHTML;
   const status = roomStatus.innerHTML;
 
-  const message = `Meeting Room Name ${workspace},, status ${status}`
+  const message = `Meeting Room Name ${workspace},, status ${status}`;
 
-  speak(message,{ pitch: 80 , speed: 140})
-}); 
+  speak(message, { pitch: 80, speed: 140 });
+});
