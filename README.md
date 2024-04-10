@@ -35,6 +35,10 @@ This Web App also works for rooms
     or
     xConfiguration WebEngine Features Xapi Peripherals AllowedHosts Hosts: wxsd-sales.github.io
     ```
+3. (optional) For Text-To-Speech, enable Audio Output for the WebEngine on the Peripherals [xConfiguration WebEngine Features Peripherals AudioOutput](https://roomos.cisco.com/xapi/Configuration.WebEngine.Features.Peripherals.AudioOutput/)
+    ```
+    xConfiguration WebEngine Features Peripherals AudioOutput: On
+    ```
 
 3. Lastly set the Persistent Web App URL to the PWA Web App: ``https://wxsd-sales.github.io/pwa-webapp``
     ```
@@ -57,3 +61,8 @@ Everything included is for demo and Proof of Concept purposes only. Use of the s
 
 ## Questions
 Please contact the WXSD team at [wxsd@external.cisco.com](mailto:wxsd@external.cisco.com?subject=pwa-webapp) for questions. Or, if you're a Cisco internal employee, reach out to us on the Webex App via our bot (globalexpert@webex.bot). In the "Engagement Type" field, choose the "API/SDK Proof of Concept Integration Development" option to make sure you reach our team. 
+
+
+## Text-To-Speech
+Text-To-Speech functionality is made possible in this demo thanks to the Speak.JS project.
+https://github.com/kripken/speak.js
