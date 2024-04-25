@@ -2,7 +2,7 @@
 
 This is a example Persistent Web App (PWA) for the Cisco Room Navigator.
 
-![PWA-WebApp](images/PWA%20WebApp.gif)
+![PWA-WebApp](images/PWA-WebApp.gif)
 
 ## Overview
 
